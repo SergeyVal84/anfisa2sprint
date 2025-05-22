@@ -50,6 +50,7 @@ class IceCream(PublishedModel):
         related_name='ice_cream',
         null=True,
         blank=True,
+        verbose_name='Обертка',
     )
     category = models.ForeignKey(
         Category,
@@ -58,7 +59,7 @@ class IceCream(PublishedModel):
         verbose_name='Категория'
     )
     toppings = models.ManyToManyField(Topping)
-    is_on_main = models.BooleanField(default=False)
+    is_on_main = models.BooleanField(default=False, verbose_name='Показывать на главной странице')
 
     class Meta:
         verbose_name = 'Мороженное'
